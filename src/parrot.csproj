@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="microsoft.bot.builder.integration.aspnet.core" Version="4.0.0-alpha2018041201" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlite" Version="2.0.2" />
   </ItemGroup>
 
 </Project>
