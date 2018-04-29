@@ -1,6 +1,6 @@
 namespace parrot
 {
-    class ParrotKnowledge
+    public class ParrotKnowledge
     {
         public int Id { get; set; }
         public string Quesion { get; set; }
