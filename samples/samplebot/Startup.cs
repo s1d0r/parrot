@@ -7,8 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Bot.Builder.BotFramework;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using parrot;
+using parrot.Extensions;
 
 namespace samplebot
 {
@@ -28,6 +31,11 @@ namespace samplebot
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddDbContext<ParrotContext>(options =>
+			{
+				options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+			});
+			services.AddParrot();
 			services.AddSingleton(_ => Configuration);
 			services.AddBot<SampleBot>(options =>
 			{
