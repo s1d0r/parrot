@@ -10,6 +10,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="microsoft.bot.builder.integration.aspnet.core" Version="4.0.0-alpham4.2" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlite" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\parrot.csproj" />
   </ItemGroup>
 
 </Project>
