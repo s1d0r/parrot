@@ -36,72 +36,59 @@ namespace parrot
 
 		public virtual async Task Trace(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task MessageReaction(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task Suggestion(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task InstallationUpdate(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task MessageDelete(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task MessageUpdate(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task DeleteUserData(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task Invoke(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task Event(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task EndOfConversation(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task Ping(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task Typing(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task ContactRelationUpdate(ITurnContext context)
 		{
-			throw new NotImplementedException();
 		}
 
 		public virtual async Task ConversationUpdate(ITurnContext context)
 		{
-			throw new NotImplementedException();
+			await context.SendActivity("Hello!!!");
 		}
 
 		public virtual async Task Message(ITurnContext context)
