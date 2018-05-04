@@ -31,6 +31,7 @@ namespace samplebot
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddMvc();
 			services.AddDbContext<ParrotContext>(options =>
 			{
 				options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
@@ -50,7 +51,9 @@ namespace samplebot
 				app.UseDeveloperExceptionPage();
 			}
 
-			app.UseDefaultFiles()
+			app
+				.UseMvc()
+				.UseDefaultFiles()
 				.UseStaticFiles()
 				.UseBotFramework();
 		}
