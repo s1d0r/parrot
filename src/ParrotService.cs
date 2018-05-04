@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 
 namespace parrot
@@ -14,14 +15,14 @@ namespace parrot
             db=parrotContext;
         }
 
-        public void OnTurn(ITurnContext context)
+        public async Task OnTurn(ITurnContext context)
         {
             var question=context.Activity.Text;
             var parrotKnowledge=FindQuestion(db.ParrotKnowledge.ToList(), question);
 
             if(parrotKnowledge!=null){
                 if(parrotKnowledge.Answer!=null||parrotKnowledge.Answer!=""){
-                    context.SendActivity(parrotKnowledge.Answer);
+                    await context.SendActivity(parrotKnowledge.Answer);
                 }
             }
         }
