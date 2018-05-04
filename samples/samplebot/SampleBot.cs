@@ -6,24 +6,10 @@ using parrot;
 
 namespace samplebot
 {
-	public class SampleBot : IBot
+	public class SampleBot : ParrotBot
 	{
-		private readonly ParrotService parrot;
-		public SampleBot(ParrotService parrot)
+		public SampleBot(ParrotService parrot) : base(parrot)
 		{
-			this.parrot = parrot;
-		}
-
-		public async Task OnTurn(ITurnContext turnContext)
-		{
-			if (turnContext.Activity.Type is ActivityTypes.ConversationUpdate)
-			{
-				await turnContext.SendActivity("hello");
-			}
-			if (turnContext.Activity.Type is ActivityTypes.Message)
-			{
-				parrot.OnTurn(turnContext);
-			}
 		}
 	}
 }
